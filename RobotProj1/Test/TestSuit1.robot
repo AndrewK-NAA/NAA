@@ -9,7 +9,10 @@ Test Teardown    Log    Inside Test Teardown
 *** Test Cases ***
 MyFirstTest
         Log    Hello World...    
-       
+
+MySecondTest
+        Log    Hello World...    
+     
 FirstSeleniumTesst
     Open Browser        https://google.com           chrome
     Set Browser Implicit Wait    5
