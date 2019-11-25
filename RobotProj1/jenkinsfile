@@ -13,11 +13,6 @@ stage ('test:') {
           build 'RobotTests'
          }
 }
-stage ('copyLog:') {
-    steps {
-          echo "Stage copyLog"
-         }
-}
 stage ('email:') {
     steps {
           echo "Stage email"
