@@ -21,6 +21,7 @@ stage ('copyLog:') {
 stage ('email:') {
     steps {
           echo "Stage email"
+          mail bcc: '', body: 'Files built, testes and deployed to production successfully', cc: '', from: '', replyTo: '', subject: 'Jenkins Build Update', to: 'ajkilkenny@bigpon.com'
          }
 }
 stage ('deploy:') {
