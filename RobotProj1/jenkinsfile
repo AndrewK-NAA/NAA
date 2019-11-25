@@ -1,0 +1,37 @@
+pipeline {
+agent any
+stages {
+stage ('build:') {
+    steps {
+          echo "Stage build"
+          git 'https://github.com/AndrewK-NAA/NAA.git'
+         }
+}
+stage ('test:') {
+    steps {
+          echo "Stage test"
+          build 'RobotTests'
+         }
+}
+stage ('copyLog:') {
+    steps {
+          echo "Stage copyLog"
+         }
+}
+stage ('email:') {
+    steps {
+          echo "Stage email"
+         }
+}
+stage ('deploy:') {
+        steps {
+           sshPublisher(publishers: [sshPublisherDesc(configName: 'newageapps', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: true, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/newageap/public_html/', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**/*')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+         }
+}
+stage ('cleanup') {
+    steps {
+          echo "Stage cleanup"
+         }
+}
+}
+}
