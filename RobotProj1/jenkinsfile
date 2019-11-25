@@ -32,6 +32,7 @@ stage ('deploy:') {
 stage ('cleanup') {
     steps {
           echo "Stage cleanup"
+          cleanWs()
          }
 }
 }
