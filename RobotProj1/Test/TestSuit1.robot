@@ -9,7 +9,7 @@ Test Teardown    Log    Inside Test Teardown
 
 *** Test Cases ***
 MySecondTest
-        Log    Hello World...    
+        Log    Hello World...rubbish!    
      
 FirstSeleniumTesst
     Open Browser        https://google.com           chrome    options=add_argument("--start-maximized")
