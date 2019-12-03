@@ -3,6 +3,7 @@
     <configVersion>2</configVersion>
     <relativeTo>WORKSPACE</relativeTo>
     <referencedLibrary type="PYTHON" name="SeleniumLibrary" path="C:/Users/Me/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/SeleniumLibrary/__init__.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="ExcelLibrary" path="C:/Users/Me/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/ExcelLibrary/__init__.py" dynamic="false"/>
     <pythonpath/>
     <classpath/>
     <excludedForValidation/>
