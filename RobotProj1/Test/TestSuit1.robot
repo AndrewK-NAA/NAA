@@ -14,7 +14,7 @@ MySecondTest
 FirstSeleniumTesst
     Open Browser        https://google.com           chrome    options=add_argument("--start-maximized")
     Set Browser Implicit Wait    5
-    Input Text          name=q                       Automation step by step 
+    Input Text          name=q                       Automation step by step is good 
     Press Keys          false    ESC
     # Click Button    name=btnK    
     Sleep               2 
