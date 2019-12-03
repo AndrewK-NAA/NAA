@@ -1,0 +1,34 @@
+pipeline {
+agent any
+stages {
+stage ('build:') {
+    steps {
+          echo "Stage build"
+          git 'https://github.com/AndrewK-NAA/NAA.git'
+         }
+}
+stage ('test:') {
+    steps {
+          echo "Stage test"
+          build 'RobotTests'
+         }
+}
+stage ('email:') {
+    steps {
+          echo "Stage email"
+          mail bcc: '', body: 'Files built, testes and deployed to production successfully', cc: '', from: 'ajkilkenny@bigpond.com', replyTo: 'ajkilkenny@bigpond.com', subject: 'Jenkins Build Update', to: 'ajkilkenny@bigpond.com'
+         }
+}
+stage ('deploy:') {
+        steps {
+           sshPublisher(publishers: [sshPublisherDesc(configName: 'newageapps', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: true, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/newageap/public_html/', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**/*')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+         }
+}
+stage ('cleanup') {
+    steps {
+          echo "Stage cleanup"
+          cleanWs()
+         }
+}
+}
+}
